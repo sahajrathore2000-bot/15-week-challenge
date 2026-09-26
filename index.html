@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#080a0d">
 <title>15 Week Challenge — V3</title>
 <style>
-:root{
+:root{--mamba-purple:#552583;--mamba-gold:#FDB927;--mamba-black:#08080b;
   --bg:#080a0d;--panel:#10141a;--panel2:#171c23;--panel3:#202731;--line:#29313b;
   --text:#f7f8fa;--muted:#8c97a7;--accent:#d8ff45;--accent2:#b9e82d;
   --green:#7fe39a;--blue:#79a9ff;--orange:#ffbd69;--red:#ff7d7d;
@@ -14,12 +14,12 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 85% -10%,#202c13 0,#080a0d 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{margin:0;background:radial-gradient(circle at 88% -8%,rgba(85,37,131,.34) 0,transparent 25%),radial-gradient(circle at 8% 15%,rgba(253,185,39,.10) 0,transparent 22%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 button,input{font:inherit}
 button{cursor:pointer}
 .app{max-width:1180px;margin:auto;padding:16px 16px 100px}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.brand{font-size:18px;font-weight:950;letter-spacing:-.055em}.brand span{color:var(--accent)}
+.brand{font-size:18px;font-weight:950;letter-spacing:-.055em}.brand span{color:var(--accent)} .mamba-mark{color:var(--mamba-gold);font-weight:950;font-size:9px;letter-spacing:.1em}
 .top-actions{display:flex;gap:7px}.icon{width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--text)}
 .hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:28px;padding:24px;background:linear-gradient(135deg,#171d23,#101419);box-shadow:var(--shadow)}
 .hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-100px;top:-135px;background:rgba(216,255,69,.09)}
@@ -58,6 +58,21 @@ h1{font-size:40px;line-height:1;margin:7px 0;letter-spacing:-.06em}
 .settingsgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.note{padding:12px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;font-size:11px;color:var(--muted)}
 .modalback{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:30;display:none;align-items:flex-end;justify-content:center}.modalback.open{display:flex}.modal{width:min(560px,100%);background:var(--panel);border:1px solid var(--line);border-radius:24px 24px 0 0;padding:20px;max-height:85vh;overflow:auto}.close{float:right}
 .empty{padding:22px 0;color:var(--muted);font-size:11px}
+
+.mamba-hero{margin-top:12px;position:relative;overflow:hidden;border:1px solid rgba(253,185,39,.28);border-radius:22px;padding:16px 17px;background:linear-gradient(135deg,rgba(85,37,131,.32),rgba(18,15,25,.94));box-shadow:0 18px 50px rgba(0,0,0,.22)}
+.mamba-hero:before{content:"";position:absolute;inset:-35% -10% auto auto;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(253,185,39,.18),transparent 66%);transform:rotate(-12deg)}
+.mamba-tag{display:inline-flex;align-items:center;gap:7px;padding:5px 9px;border-radius:999px;background:rgba(253,185,39,.09);border:1px solid rgba(253,185,39,.25);color:#ffd66f;font-size:8px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}
+.mamba-quote{margin-top:10px;font-size:16px;line-height:1.26;font-weight:900;letter-spacing:-.025em;max-width:790px;position:relative;z-index:1}
+.mamba-quote small{display:block;margin-top:7px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#b7a9c8;font-weight:900}
+.jobbar{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.08);position:relative;z-index:1}
+.jobbar strong{color:var(--mamba-gold);font-size:10px;letter-spacing:.08em}
+.jobbar span{font-size:9px;color:var(--muted)}
+.mamba-card{border-color:rgba(85,37,131,.45)}
+.quote-chip{margin-top:10px;padding:11px 12px;border-radius:14px;background:linear-gradient(135deg,rgba(85,37,131,.22),rgba(253,185,39,.07));border:1px solid rgba(253,185,39,.16)}
+.quote-chip b{display:block;font-size:11px;line-height:1.35}
+.quote-chip span{display:block;margin-top:5px;font-size:8px;color:#b7a9c8;text-transform:uppercase;letter-spacing:.1em;font-weight:900}
+.mamba-milestone{border-left:3px solid var(--mamba-gold)}
+
 @media(max-width:850px){.stats{grid-template-columns:repeat(3,1fr)}.split{grid-template-columns:1fr}.weekcards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){
  .app{padding:12px 11px 90px}.hero{padding:19px}.hero-row{align-items:flex-start}h1{font-size:31px}.stats{grid-template-columns:repeat(2,1fr)}
@@ -69,7 +84,7 @@ h1{font-size:40px;line-height:1;margin:7px 0;letter-spacing:-.06em}
 <body>
 <div class="app">
 <header class="top">
-  <div class="brand">15 WEEK <span>CHALLENGE</span> <span style="font-size:9px;color:var(--muted);letter-spacing:.08em">V3</span></div>
+  <div class="brand">15 WEEK <span>CHALLENGE</span> <span class="mamba-mark">MAMBA EDITION · V3</span></div>
   <div class="top-actions"><button class="icon" id="settingsBtn" aria-label="Settings">⚙</button></div>
 </header>
 
@@ -91,7 +106,19 @@ h1{font-size:40px;line-height:1;margin:7px 0;letter-spacing:-.06em}
   <div class="overall"><span id="elapsed"></span><span id="left"></span></div>
 </section>
 
+<section class="mamba-hero">
+  <div class="mamba-tag">🐍 MAMBA MENTALITY</div>
+  <div class="mamba-quote" id="mambaQuote">The moment you give up, you give up on yourself.
+    <small>— Kobe Bryant</small>
+  </div>
+  <div class="jobbar">
+    <strong>JOB'S NOT FINISHED.</strong>
+    <span id="jobBarText">Keep stacking the days.</span>
+  </div>
+</section>
+
 <div class="stats">
+
   <div class="stat"><div class="label">RUN</div><div class="num" id="sRun">0</div><div class="sub">/ 25 km</div></div>
   <div class="stat"><div class="label">UPPER</div><div class="num" id="sUpper">0</div><div class="sub">/ 4 sessions</div></div>
   <div class="stat"><div class="label">LOWER</div><div class="num" id="sLower">0</div><div class="sub">/ 3 sessions</div></div>
@@ -310,6 +337,43 @@ function target(name,val,max,unit){
   return `<div class="target"><div class="targettop"><strong>${name}</strong><span>${val} / ${max} ${unit}</span></div><div class="bar"><i style="width:${clamp(val/max,0,1)*100}%"></i></div></div>`;
 }
 function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+
+
+const MAMBA_QUOTES = [
+  ["The moment you give up, you give up on yourself.","Kobe Bryant"],
+  ["Great things come from hard work and perseverance.","Kobe Bryant"],
+  ["Everything negative — pressure, challenges — is all an opportunity for me to rise.","Kobe Bryant"],
+  ["The most important thing is to try and inspire people so that they can be great in whatever they want to do.","Kobe Bryant"],
+  ["JOB'S NOT FINISHED.","Kobe Bryant"],
+  ["Once you know what failure feels like, determination chases success.","Kobe Bryant"]
+];
+const MAMBA_CHECKS = [
+  "Do the work. Let the results catch up.",
+  "Discipline beats motivation when motivation disappears.",
+  "Your standard is what you do when nobody is watching.",
+  "Small actions, repeated, become identity.",
+  "The goal is not to feel ready. The goal is to show up."
+];
+function dailyQuote(){
+  const d=Math.max(0,currentDay()-1);
+  return MAMBA_QUOTES[d % MAMBA_QUOTES.length];
+}
+function updateMamba(){
+  const q=dailyQuote();
+  const quoteEl=$('mambaQuote');
+  if(quoteEl) quoteEl.innerHTML=`${escapeHtml(q[0])}<small>— ${escapeHtml(q[1])}</small>`;
+  const cq=$('checkinQuote');
+  if(cq) cq.textContent=MAMBA_QUOTES[(currentDay()+1)%MAMBA_QUOTES.length][0];
+  const mc=$('mambaCheck');
+  if(mc) mc.textContent=MAMBA_CHECKS[(currentWeek()-1)%MAMBA_CHECKS.length];
+  const jb=$('jobBarText');
+  if(jb){
+    const day=currentDay();
+    jb.textContent = day>=105 ? "Challenge complete. The standard stays." :
+      any(log(today())) ? "Logged. Now repeat tomorrow." :
+      "One more day. One more chance to stack the work.";
+  }
+}
 
 function render(){
   if(!state.start){$('setup').style.display='block';$('main').style.display='none';return}
