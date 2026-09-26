@@ -3,57 +3,443 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090b0f">
-<title>15 Week Challenge — V2</title>
+<meta name="theme-color" content="#080a0d">
+<title>15 Week Challenge — V3</title>
 <style>
-:root{--bg:#090b0f;--panel:#11151b;--panel2:#171c23;--panel3:#1d232c;--text:#f6f7f9;--muted:#8993a2;--line:#28303a;--accent:#d7ff4f;--accent2:#b9e72d;--blue:#77a7ff;--orange:#ffb45d;--red:#ff7474;--green:#7ee38d;--shadow:0 18px 50px rgba(0,0,0,.24);--r:22px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% -10%,#1b2411 0,#090b0f 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1180px;margin:auto;padding:18px 18px 100px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.brand{font-size:19px;font-weight:950;letter-spacing:-.05em}.brand span{color:var(--accent)}.topright{display:flex;gap:8px}.icon{height:42px;width:42px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:14px}.hero{border:1px solid var(--line);background:linear-gradient(135deg,#171d23,#101419);border-radius:30px;padding:25px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-90px;top:-100px;background:rgba(215,255,79,.08)}.eyebrow,.label{font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}h1{font-size:38px;line-height:1;margin:7px 0;letter-spacing:-.055em}.hero p{margin:8px 0 19px;color:var(--muted);font-size:13px}.overall{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:9px}.progress{height:9px;background:#252c34;border-radius:99px;overflow:hidden}.progress i{height:100%;display:block;background:var(--accent);border-radius:99px;transition:.3s}.herorow{display:flex;justify-content:space-between;align-items:end;gap:15px}.daybadge{background:rgba(215,255,79,.1);border:1px solid rgba(215,255,79,.25);color:var(--accent);padding:8px 11px;border-radius:999px;font-size:11px;font-weight:900;white-space:nowrap}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:17px}.stat .num{font-size:24px;font-weight:950;letter-spacing:-.045em;margin-top:4px}.stat .sub{font-size:11px;color:var(--muted);margin-top:3px}.nav{display:flex;gap:7px;overflow:auto;padding:18px 0 3px;position:sticky;top:0;z-index:5;background:linear-gradient(var(--bg) 75%,transparent)}.nav button{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:9px 14px;font-size:12px;font-weight:850;white-space:nowrap}.nav button.active{background:var(--accent);border-color:var(--accent);color:#111}.view{display:none}.view.active{display:block}.section{margin-top:15px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:0 0 10px}.sectionhead h2{font-size:18px;margin:0;letter-spacing:-.03em}.sectionhead span{font-size:11px;color:var(--muted)}.btn{border:0;border-radius:14px;padding:12px 15px;font-weight:900}.primary{background:var(--accent);color:#111}.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.checkcard{display:flex;align-items:center;justify-content:space-between;gap:16px}.checkcard h2{margin:4px 0;font-size:19px}.muted{color:var(--muted);font-size:12px}.target{margin:14px 0}.targettop{display:flex;justify-content:space-between;gap:10px;font-size:12px}.targettop strong{font-size:13px}.targettop span{color:var(--muted)}.bar{height:7px;background:#242b33;border-radius:99px;overflow:hidden;margin-top:7px}.bar i{height:100%;display:block;background:var(--accent);border-radius:99px}.quickgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.q{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:14px 8px;text-align:center;color:var(--text)}.q .ico{font-size:22px}.q b{display:block;font-size:11px;margin-top:6px}.q.on{background:#263018;border-color:#607c26}.q.on b{color:var(--accent)}.split{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}.minirow{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.minirow:last-child{border-bottom:0}.ring{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--accent) var(--p),#2a313a 0);position:relative}.ring:after{content:"";position:absolute;inset:7px;background:var(--panel);border-radius:50%}.ring span{position:relative;z-index:1;font-weight:950;font-size:14px}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.calhead{font-size:9px;color:var(--muted);text-align:center;padding-bottom:2px}.calday{aspect-ratio:1;border:1px solid var(--line);border-radius:9px;background:var(--panel2);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:10px;position:relative}.calday.has{background:#202a18;color:var(--accent);border-color:#526728}.calday.full{background:#31431b;border-color:#6c8d2d;color:var(--accent)}.calday.today{outline:2px solid var(--accent)}.calday .dot{position:absolute;bottom:3px;width:3px;height:3px;border-radius:50%;background:var(--accent)}.weekcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.weekcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px}.weektop{display:flex;justify-content:space-between;font-weight:950}.weekmeta{font-size:10px;color:var(--muted);margin-top:3px}.mini{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}.mini div{background:var(--panel2);padding:8px;border-radius:10px}.mini small{display:block;font-size:8px;color:var(--muted);text-transform:uppercase}.mini b{font-size:12px}.form{max-width:760px}.dateinput,.field input,.field select{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:13px;border-radius:13px;outline:none}.dateinput:focus,.field input:focus{border-color:var(--accent)}.formgroup{margin-top:18px}.field{margin-top:14px}.field label{display:block;font-size:10px;font-weight:900;color:var(--muted);letter-spacing:.1em;margin-bottom:7px}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.save{position:sticky;bottom:12px;margin-top:18px;background:rgba(9,11,15,.88);backdrop-filter:blur(14px);padding-top:10px}.toast{min-height:18px;color:var(--accent);font-size:11px;margin-top:7px}.historygrid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.hday{aspect-ratio:1;border:1px solid var(--line);background:var(--panel2);color:var(--muted);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:9px}.hday.has{background:#202a18;color:var(--accent)}.hday.full{background:#31431b;border-color:#6c8d2d}.hday.selected{outline:2px solid var(--accent)}.detail{margin-top:10px}.settingsgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.note{padding:13px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;font-size:12px;color:var(--muted)}.danger{color:#ff9a9a}.empty{padding:20px 0;color:var(--muted);font-size:12px}.modalback{position:fixed;inset:0;background:rgba(0,0,0,.68);z-index:20;display:none;align-items:end;justify-content:center}.modal{width:min(560px,100%);background:var(--panel);border:1px solid var(--line);border-radius:24px 24px 0 0;padding:20px}.modalback.open{display:flex}.close{float:right}.achievement{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);background:var(--panel2);border-radius:15px;margin-top:8px}.achievement.lock{opacity:.42}.achievement .badge{font-size:22px}.score{font-size:42px;font-weight:950;letter-spacing:-.06em}.pill{display:inline-flex;padding:5px 8px;border-radius:999px;background:#242c35;color:var(--muted);font-size:9px;font-weight:900}.pill.green{background:#23361f;color:var(--green)}
-@media(max-width:850px){.stats{grid-template-columns:repeat(3,1fr)}.weekcards{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}}
-@media(max-width:560px){.app{padding:14px 12px 90px}.hero{padding:20px}.herorow{align-items:start}.hero h1{font-size:31px}.stats{grid-template-columns:repeat(2,1fr)}.checkcard{align-items:stretch;flex-direction:column}.checkcard .btn{width:100%}.quickgrid{grid-template-columns:repeat(2,1fr)}.weekcards{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.calendar,.historygrid{gap:3px}.calday,.hday{border-radius:7px;font-size:8px}}
+:root{
+  --bg:#080a0d;--panel:#10141a;--panel2:#171c23;--panel3:#202731;--line:#29313b;
+  --text:#f7f8fa;--muted:#8c97a7;--accent:#d8ff45;--accent2:#b9e82d;
+  --green:#7fe39a;--blue:#79a9ff;--orange:#ffbd69;--red:#ff7d7d;
+  --shadow:0 20px 60px rgba(0,0,0,.28);--r:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 85% -10%,#202c13 0,#080a0d 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}
+button{cursor:pointer}
+.app{max-width:1180px;margin:auto;padding:16px 16px 100px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.brand{font-size:18px;font-weight:950;letter-spacing:-.055em}.brand span{color:var(--accent)}
+.top-actions{display:flex;gap:7px}.icon{width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--text)}
+.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:28px;padding:24px;background:linear-gradient(135deg,#171d23,#101419);box-shadow:var(--shadow)}
+.hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-100px;top:-135px;background:rgba(216,255,69,.09)}
+.eyebrow,.label{font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;position:relative;z-index:1}
+h1{font-size:40px;line-height:1;margin:7px 0;letter-spacing:-.06em}
+.hero p{margin:8px 0 18px;color:var(--muted);font-size:12px}
+.daybadge{padding:8px 11px;border-radius:999px;background:rgba(216,255,69,.1);border:1px solid rgba(216,255,69,.3);color:var(--accent);font-size:10px;font-weight:950;white-space:nowrap}
+.progress{height:9px;background:#252c35;border-radius:99px;overflow:hidden;position:relative;z-index:1}
+.progress i,.bar i{height:100%;display:block;background:var(--accent);border-radius:99px;transition:.25s}
+.overall{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;margin-top:8px;position:relative;z-index:1}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:11px}
+.card,.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.stat .num{font-size:24px;font-weight:950;letter-spacing:-.05em;margin-top:3px}.stat .sub{font-size:10px;color:var(--muted);margin-top:2px}
+.nav{display:flex;gap:7px;overflow:auto;padding:15px 0 5px;position:sticky;top:0;z-index:10;background:linear-gradient(var(--bg) 75%,transparent)}
+.nav button{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:9px 14px;font-size:11px;font-weight:900;white-space:nowrap}
+.nav button.active{background:var(--accent);border-color:var(--accent);color:#10120b}
+.view{display:none}.view.active{display:block}
+.section{margin-top:14px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:9px}.sectionhead h2{font-size:17px;margin:0;letter-spacing:-.035em}.sectionhead span{font-size:10px;color:var(--muted)}
+.checkcard{display:flex;justify-content:space-between;align-items:center;gap:15px}.checkcard h2{margin:3px 0;font-size:19px}.muted{color:var(--muted);font-size:11px}
+.btn{border:0;border-radius:14px;padding:12px 15px;font-weight:950}.primary{background:var(--accent);color:#10120b}.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.danger{color:#ff9b9b}
+.targets-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.target{margin:11px 0}.targettop{display:flex;justify-content:space-between;font-size:11px}.targettop strong{font-size:12px}.targettop span{color:var(--muted)}.bar{height:7px;background:#252c35;border-radius:99px;overflow:hidden;margin-top:6px}
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:12px}
+.minirow{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}.minirow:last-child{border-bottom:0}
+.ring{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--accent) var(--p),#2a313a 0);position:relative}.ring:after{content:"";position:absolute;inset:7px;background:var(--panel);border-radius:50%}.ring span{position:relative;z-index:1;font-size:14px;font-weight:950}
+.calendar-head,.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.calendar-head div{font-size:8px;text-align:center;color:var(--muted);padding:3px}
+.calday{aspect-ratio:1;border:1px solid var(--line);border-radius:9px;background:var(--panel2);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:9px;position:relative}.calday.has{background:#202a18;color:var(--accent);border-color:#526728}.calday.full{background:#33491b;border-color:#76982e;color:var(--accent)}.calday.today{outline:2px solid var(--accent)}.calday .dot{position:absolute;bottom:4px;width:3px;height:3px;border-radius:50%;background:var(--accent)}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.q{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:15px;padding:14px 8px;text-align:center}.q .ico{font-size:21px}.q b{display:block;font-size:10px;margin-top:5px}.q.on{background:#263018;border-color:#607c26}.q.on b{color:var(--accent)}
+.form{max-width:800px}.field{margin-top:14px}.field label{display:block;font-size:9px;font-weight:950;color:var(--muted);letter-spacing:.12em;margin-bottom:6px}.field input,.dateinput{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:13px;border-radius:13px;outline:none}.field input:focus,.dateinput:focus{border-color:var(--accent)}
+.formgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.savebar{position:sticky;bottom:10px;margin-top:16px;padding-top:9px;background:rgba(8,10,13,.88);backdrop-filter:blur(14px)}.toast{min-height:17px;color:var(--accent);font-size:10px;margin-top:6px}
+.weekcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.weekcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px}.weektop{display:flex;justify-content:space-between;font-weight:950}.weekmeta{font-size:9px;color:var(--muted);margin-top:3px}.mini{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:11px}.mini div{background:var(--panel2);padding:8px;border-radius:10px}.mini small{display:block;font-size:7px;color:var(--muted);text-transform:uppercase}.mini b{font-size:11px}
+.history-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.heatmap{overflow:auto}.heat-grid{display:grid;grid-template-columns:repeat(15,minmax(22px,1fr));gap:5px;min-width:410px}.heatcell{aspect-ratio:1;border-radius:6px;background:#171c23;border:1px solid #252c35;display:grid;place-items:center;font-size:7px;color:#687384}.heatcell.l1{background:#243119;color:#c6ec52}.heatcell.l2{background:#33491b;color:#d8ff45}.heatcell.l3{background:#526e25;color:#fff}.heatcell.today{outline:2px solid var(--accent)}.heatlabels{display:grid;grid-template-columns:repeat(15,minmax(22px,1fr));gap:5px;min-width:410px;margin-top:5px}.heatlabels span{text-align:center;font-size:7px;color:var(--muted)}
+.detail{margin-top:10px}.achievement{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);background:var(--panel2);border-radius:15px;margin-top:8px}.achievement.lock{opacity:.42}.achievement .badge{font-size:21px}.pill{display:inline-flex;padding:5px 8px;border-radius:999px;background:#252c35;color:var(--muted);font-size:8px;font-weight:950}.pill.green{background:#23361f;color:var(--green)}
+.insight{padding:13px;border-radius:15px;background:linear-gradient(135deg,#1d2815,#171c23);border:1px solid #384726}.insight strong{color:var(--accent)}
+.settingsgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.note{padding:12px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;font-size:11px;color:var(--muted)}
+.modalback{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:30;display:none;align-items:flex-end;justify-content:center}.modalback.open{display:flex}.modal{width:min(560px,100%);background:var(--panel);border:1px solid var(--line);border-radius:24px 24px 0 0;padding:20px;max-height:85vh;overflow:auto}.close{float:right}
+.empty{padding:22px 0;color:var(--muted);font-size:11px}
+@media(max-width:850px){.stats{grid-template-columns:repeat(3,1fr)}.split{grid-template-columns:1fr}.weekcards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){
+ .app{padding:12px 11px 90px}.hero{padding:19px}.hero-row{align-items:flex-start}h1{font-size:31px}.stats{grid-template-columns:repeat(2,1fr)}
+ .checkcard{flex-direction:column;align-items:stretch}.checkcard .btn{width:100%}.targets-grid{grid-template-columns:1fr}.quick{grid-template-columns:repeat(2,1fr)}
+ .formgrid{grid-template-columns:1fr}.weekcards{grid-template-columns:1fr}.calendar,.calendar-head{gap:3px}.calday{border-radius:7px;font-size:8px}
+}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="top"><div class="brand">15 WEEK <span>CHALLENGE</span> <span style="font-size:10px;color:var(--muted);letter-spacing:.08em">V2</span></div><div class="topright"><button class="icon" id="settingsBtn">⚙</button></div></header>
-<section id="setup" class="card" style="display:none"><div class="label">SET UP</div><h2 style="margin:6px 0">Choose your Day 1</h2><p class="muted">Your challenge is 105 days / 15 weeks. Existing V1 data stays intact when possible.</p><input class="dateinput" id="startDate" type="date"><button class="btn primary" id="startBtn" style="margin-top:10px">START CHALLENGE</button></section>
-<main id="main">
-<section class="hero"><div class="hero row"><div class="eyebrow">YOUR 105-DAY JOURNEY</div><div class="heroRow"></div></div><div class="heroRow"><div><h1 id="heroTitle">Week 1 · Day 1</h1><p id="heroSub">Build the habit. Then build the athlete.</p></div><div class="daybadge" id="dayBadge">DAY 1 / 105</div></div><div class="progress"><i id="overallBar"></i></div><div class="overall"><span id="elapsed">0% complete</span><span id="left">105 days left</span></div></section>
-<div class="stats"><div class="card stat"><div class="label">RUN</div><div class="num" id="sRun">0.0</div><div class="sub">/ 25 km</div></div><div class="card stat"><div class="label">UPPER</div><div class="num" id="sUpper">0</div><div class="sub">/ 4 sessions</div></div><div class="card stat"><div class="label">LOWER</div><div class="num" id="sLower">0</div><div class="sub">/ 3 sessions</div></div><div class="card stat"><div class="label">CORE</div><div class="num" id="sCore">0</div><div class="sub">/ 5 sessions</div></div><div class="card stat"><div class="label">STREAK</div><div class="num" id="sStreak">0</div><div class="sub">check-in days</div></div></div>
-<nav class="nav"><button class="active" data-view="home">Home</button><button data-view="checkin">Check-in</button><button data-view="analytics">Analytics</button><button data-view="challenge">15 Weeks</button><button data-view="history">History</button></nav>
-<section id="home" class="view active">
-<div class="section"><div class="card checkcard"><div><div class="label">TODAY</div><h2 id="todayTitle">Ready when you are.</h2><div class="muted" id="todaySummary">Log today's activity in a few taps.</div></div><button class="btn primary" data-go="checkin">CHECK IN →</button></div></div>
-<div class="section split"><div class="card"><div class="sectionhead"><h2>Weekly targets</h2><span id="weekScore">0% complete</span></div><div id="targets"></div></div><div class="card"><div class="sectionhead"><h2>Week at a glance</h2><span id="weekLabel">Week 1</span></div><div class="minirow"><span>🧘 Meditation</span><b id="glanceMed">0 / 7</b></div><div class="minirow"><span>🤝 Forearms</span><b id="glanceForearms">0 / 7</b></div><div class="minirow"><span>😴 Avg sleep</span><b id="glanceSleep">—</b></div><div class="minirow"><span>📍 Days tracked</span><b id="glanceTracked">0 / 7</b></div></div></div>
-<div class="section"><div class="sectionhead"><h2>Current week</h2><span>Tap Check-in to update</span></div><div class="card"><div class="calendar" id="weekCalendar"></div></div></div>
-<div class="section"><div class="sectionhead"><h2>Consistency score</h2><span>Across this week</span></div><div class="card" style="display:flex;align-items:center;gap:18px"><div class="ring" id="scoreRing" style="--p:0%"><span id="scoreRingText">0%</span></div><div><div style="font-size:15px;font-weight:900" id="scoreHeadline">Start your week.</div><div class="muted" id="scoreText">Complete your daily actions and the score will update automatically.</div></div></div></div>
-<div class="section"><div class="sectionhead"><h2>Achievements</h2><span>Milestones</span></div><div class="card" id="achievements"></div></div>
+<header class="top">
+  <div class="brand">15 WEEK <span>CHALLENGE</span> <span style="font-size:9px;color:var(--muted);letter-spacing:.08em">V3</span></div>
+  <div class="top-actions"><button class="icon" id="settingsBtn" aria-label="Settings">⚙</button></div>
+</header>
+
+<section id="setup" class="card" style="display:none">
+  <div class="label">SET UP</div><h2 style="margin:6px 0">Choose your Day 1</h2>
+  <p class="muted">105 days. 15 weeks. One dashboard. Your date is handled in local time.</p>
+  <input class="dateinput" id="startDate" type="date">
+  <button class="btn primary" id="startBtn" style="margin-top:10px">START CHALLENGE</button>
 </section>
-<section id="checkin" class="view"><div class="card form"><div class="label">FAST DAILY CHECK-IN</div><h2 style="margin:6px 0 2px">Log the work.</h2><div class="muted">One screen. No spreadsheets.</div><div class="formgroup"><div class="label">DATE</div><input class="dateinput" id="logDate" type="date"></div><div class="formgroup"><div class="label">TRAINING</div><div class="quickgrid" style="margin-top:8px"><button class="q" data-key="upper"><div class="ico">💪</div><b>Upper</b></button><button class="q" data-key="lower"><div class="ico">🦵</div><b>Lower</b></button><button class="q" data-key="core"><div class="ico">🔥</div><b>Core</b></button><button class="q" data-key="forearms"><div class="ico">🤝</div><b>Forearms</b></button></div></div><div class="formgrid"><div class="field"><label>🏃 RUNNING · KM</label><input id="run" type="number" min="0" max="100" step=".1" placeholder="0.0"></div><div class="field"><label>🧘 MEDITATION · MIN</label><input id="med" type="number" min="0" max="300" step="1" placeholder="0"></div><div class="field"><label>😴 SLEEP · HOURS</label><input id="sleep" type="number" min="0" max="24" step=".1" placeholder="7.5"></div><div class="field"><label>📝 NOTE (OPTIONAL)</label><input id="note" type="text" maxlength="120" placeholder="How did training feel?"></div></div><div class="save"><button class="btn primary" id="saveLog" style="width:100%">SAVE CHECK-IN</button><div class="toast" id="toast"></div></div></div></section>
-<section id="analytics" class="view"><div class="section split"><div class="card"><div class="label">CURRENT WEEK</div><div class="score" id="analyticsScore">0%</div><div class="muted">weighted completion across 6 goals</div><div style="margin-top:16px" id="analyticsBars"></div></div><div class="card"><div class="label">RECOVERY</div><div class="score" id="analyticsSleep">—</div><div class="muted">average sleep this week</div><div style="margin-top:16px"><div class="minirow"><span>Tracked days</span><b id="aTracked">0 / 7</b></div><div class="minirow"><span>Meditation days</span><b id="aMed">0 / 7</b></div></div></div></div><div class="section"><div class="sectionhead"><h2>15-week trend</h2><span>Weekly completion</span></div><div class="card" id="trend"></div></div><div class="section"><div class="note"><b style="color:var(--text)">How the score works:</b> each weekly goal contributes equally. Running is measured against 25 km; upper 4; lower 3; core 5; forearms 7; meditation 7 days. Sleep is tracked separately and does not distort the training score.</div></div></section>
-<section id="challenge" class="view"><div class="sectionhead"><h2>15-Week Overview</h2><span id="challengeAvg">0% avg</span></div><div class="weekcards" id="weekCards"></div></section>
-<section id="history" class="view"><div class="card"><div class="sectionhead"><h2>105-Day History</h2><span>Tap any day</span></div><div class="historygrid" id="historyGrid"></div><div class="detail" id="historyDetail"><div class="empty">Select a day to inspect or edit it.</div></div></div></section>
-</main></div>
-<div class="modalback" id="settingsModal"><div class="modal"><button class="icon close" id="closeSettings">×</button><div class="label">SETTINGS & DATA</div><h2 style="margin:6px 0 4px">Your challenge</h2><p class="muted">V2 keeps your data in this browser. Export a backup before changing devices.</p><div class="settingsgrid"><button class="btn secondary" id="exportBtn">EXPORT BACKUP</button><button class="btn secondary" id="importBtn">IMPORT BACKUP</button></div><input id="importFile" type="file" accept="application/json" style="display:none"><div class="section"><div class="note"><b style="color:var(--text)">Start date:</b> <span id="settingStart">—</span><br><b style="color:var(--text)">Storage:</b> this browser only<br><b style="color:var(--text)">Cloud sync:</b> not yet enabled</div></div><div class="section"><button class="btn secondary danger" id="resetBtn" style="width:100%">RESET ALL CHALLENGE DATA</button></div></div></div>
+
+<main id="main">
+<section class="hero">
+  <div class="eyebrow">YOUR 105-DAY JOURNEY</div>
+  <div class="hero-row">
+    <div><h1 id="heroTitle">Week 1 · Day 1</h1><p id="heroSub"></p></div>
+    <div class="daybadge" id="dayBadge"></div>
+  </div>
+  <div class="progress"><i id="overallBar"></i></div>
+  <div class="overall"><span id="elapsed"></span><span id="left"></span></div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="label">RUN</div><div class="num" id="sRun">0</div><div class="sub">/ 25 km</div></div>
+  <div class="stat"><div class="label">UPPER</div><div class="num" id="sUpper">0</div><div class="sub">/ 4 sessions</div></div>
+  <div class="stat"><div class="label">LOWER</div><div class="num" id="sLower">0</div><div class="sub">/ 3 sessions</div></div>
+  <div class="stat"><div class="label">CORE</div><div class="num" id="sCore">0</div><div class="sub">/ 5 sessions</div></div>
+  <div class="stat"><div class="label">STREAK</div><div class="num" id="sStreak">0</div><div class="sub">check-in days</div></div>
+</div>
+
+<nav class="nav">
+  <button data-view="home" class="active">Home</button>
+  <button data-view="checkin">Check-in</button>
+  <button data-view="analytics">Analytics</button>
+  <button data-view="weeks">15 Weeks</button>
+  <button data-view="history">History</button>
+</nav>
+
+<section id="home" class="view active">
+  <div class="section">
+    <div class="card checkcard">
+      <div><div class="label">TODAY</div><h2 id="todayTitle">Ready when you are.</h2><div class="muted" id="todaySummary">Log today in a few taps.</div></div>
+      <button class="btn primary" data-go="checkin">CHECK-IN →</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sectionhead"><h2>This week's mission</h2><span id="weekLabel"></span></div>
+    <div class="targets-grid card" id="targets"></div>
+  </div>
+
+  <div class="section">
+    <div class="split">
+      <div class="card">
+        <div class="sectionhead"><h2>Week at a glance</h2><span>live</span></div>
+        <div class="minirow"><span>🏃 Running</span><b id="glanceRun">0 / 25 km</b></div>
+        <div class="minirow"><span>🧘 Meditation</span><b id="glanceMed">0 / 7</b></div>
+        <div class="minirow"><span>🤝 Forearms</span><b id="glanceForearms">0 / 7</b></div>
+        <div class="minirow"><span>😴 Avg sleep</span><b id="glanceSleep">—</b></div>
+        <div class="minirow"><span>📌 Days tracked</span><b id="glanceTracked">0 / 7</b></div>
+      </div>
+      <div class="card">
+        <div class="sectionhead"><h2>Consistency</h2><span>training goals</span></div>
+        <div style="display:flex;align-items:center;gap:15px">
+          <div class="ring" id="scoreRing"><span id="scoreRingText">0%</span></div>
+          <div><b id="scoreHeadline">Start with the next action.</b><div class="muted" id="scoreText" style="margin-top:5px"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sectionhead"><h2>Current week</h2><span>tap a day to edit</span></div>
+    <div class="card">
+      <div class="calendar-head"><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div></div>
+      <div class="calendar" id="weekCalendar"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sectionhead"><h2>Milestones</h2><span>keep stacking wins</span></div>
+    <div id="achievements"></div>
+  </div>
+</section>
+
+<section id="checkin" class="view">
+  <div class="section form">
+    <div class="sectionhead"><h2>Fast daily check-in</h2><span>10–20 seconds</span></div>
+    <div class="card">
+      <div class="label">DATE</div>
+      <input class="dateinput" id="logDate" type="date">
+      <div class="field">
+        <label>TRAINING</label>
+        <div class="quick">
+          <button class="q" data-key="upper"><div class="ico">💪</div><b>Upper</b></button>
+          <button class="q" data-key="lower"><div class="ico">🦵</div><b>Lower</b></button>
+          <button class="q" data-key="core"><div class="ico">🔥</div><b>Core</b></button>
+          <button class="q" data-key="forearms"><div class="ico">🤝</div><b>Forearms</b></button>
+        </div>
+      </div>
+      <div class="formgrid">
+        <div class="field"><label>RUN — KM</label><input id="run" type="number" min="0" step=".1" placeholder="0"></div>
+        <div class="field"><label>MEDITATION — MIN</label><input id="med" type="number" min="0" step="1" placeholder="0"></div>
+        <div class="field"><label>SLEEP — HOURS</label><input id="sleep" type="number" min="0" max="24" step=".1" placeholder="7.5"></div>
+      </div>
+      <div class="field"><label>NOTE — OPTIONAL</label><input id="note" maxlength="240" placeholder="How did training feel?"></div>
+      <div class="savebar"><button class="btn primary" id="saveLog" style="width:100%">SAVE CHECK-IN</button><div class="toast" id="toast"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="analytics" class="view">
+  <div class="section">
+    <div class="sectionhead"><h2>This week</h2><span>goal completion</span></div>
+    <div class="split">
+      <div class="card">
+        <div class="label">TRAINING SCORE</div><div class="score" id="analyticsScore">0%</div>
+        <div class="muted">Equal-weight completion across six training goals.</div>
+        <div id="analyticsBars" style="margin-top:12px"></div>
+      </div>
+      <div class="card">
+        <div class="label">RECOVERY</div>
+        <div style="font-size:27px;font-weight:950;margin-top:5px" id="analyticsSleep">—</div>
+        <div class="muted">average sleep this week</div>
+        <div class="minirow" style="margin-top:12px"><span>Tracked days</span><b id="aTracked">0 / 7</b></div>
+        <div class="minirow"><span>Meditation days</span><b id="aMed">0 / 7</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sectionhead"><h2>15-week trend</h2><span>training completion</span></div>
+    <div class="card" id="trend"></div>
+  </div>
+  <div class="section">
+    <div class="insight"><strong id="insightTitle">Your next action:</strong> <span id="insightText">complete today's check-in.</span></div>
+  </div>
+</section>
+
+<section id="weeks" class="view">
+  <div class="section">
+    <div class="sectionhead"><h2>15-week overview</h2><span id="challengeAvg">0% avg</span></div>
+    <div class="weekcards" id="weekCards"></div>
+  </div>
+</section>
+
+<section id="history" class="view">
+  <div class="section">
+    <div class="history-toolbar"><div><div class="sectionhead" style="margin:0"><h2>105-day heatmap</h2></div><div class="muted">Darker = more of the day's goals completed.</div></div><span class="pill">tap a day</span></div>
+    <div class="card heatmap">
+      <div class="heat-grid" id="heatGrid"></div>
+      <div class="heatlabels" id="heatLabels"></div>
+    </div>
+    <div class="detail" id="historyDetail"></div>
+  </div>
+</section>
+</main>
+</div>
+
+<div class="modalback" id="settingsModal">
+  <div class="modal">
+    <button class="icon close" id="closeSettings">×</button>
+    <div class="label">SETTINGS</div><h2 style="margin:6px 0 4px">Challenge controls</h2>
+    <div class="muted">Start date: <b id="settingStart">—</b></div>
+    <div class="settingsgrid" style="margin-top:15px">
+      <button class="btn secondary" id="exportBtn">EXPORT BACKUP</button>
+      <button class="btn secondary" id="importBtn">IMPORT BACKUP</button>
+    </div>
+    <input id="importFile" type="file" accept=".json" style="display:none">
+    <div class="note" style="margin-top:12px"><b>Local-first:</b> your data currently stays in this browser. Export a backup if you change devices. Cloud sync/login is the next infrastructure layer.</div>
+    <button class="btn secondary danger" id="resetBtn" style="margin-top:12px;width:100%">RESET ALL DATA</button>
+  </div>
+</div>
+
 <script>
-const KEY="15weekchallenge_v1"; // intentionally preserves V1 data
-const TARGET={run:25,upper:4,lower:3,core:5,forearms:7,med:7};
-let state={start:null,logs:{}};let selected={upper:false,lower:false,core:false,forearms:false};
-try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&typeof s==='object')state={start:s.start||null,logs:s.logs||{}}}catch(e){}
-const $=id=>document.getElementById(id);const today=()=>new Date().toISOString().slice(0,10);function D(s){const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)}function I(d){return new Date(d.getFullYear(),d.getMonth(),d.getDate()).toISOString().slice(0,10)}function add(s,n){const d=D(s);d.setDate(d.getDate()+n);return I(d)}function idx(s){return Math.floor((D(s)-D(state.start))/86400000)}function currentDay(){return Math.max(0,Math.min(105,idx(today())+1))}function weekNow(){return Math.min(15,Math.max(1,Math.floor((currentDay()-1)/7)+1))}function log(s){return state.logs[s]||{date:s,run:0,upper:false,lower:false,core:false,forearms:false,med:0,sleep:null,note:''}}function save(){localStorage.setItem(KEY,JSON.stringify(state))}function any(x){return !!(x.run||x.upper||x.lower||x.core||x.forearms||x.med||x.sleep!==null&&x.sleep!==undefined&&x.sleep!==''||x.note)}function ws(w){const st=add(state.start,(w-1)*7),en=add(st,6),a=Object.values(state.logs).filter(x=>x.date>=st&&x.date<=en),sl=a.filter(x=>x.sleep!==null&&x.sleep!==undefined&&x.sleep!=='').map(x=>+x.sleep);return{a,run:a.reduce((n,x)=>n+(+x.run||0),0),upper:a.filter(x=>x.upper).length,lower:a.filter(x=>x.lower).length,core:a.filter(x=>x.core).length,forearms:a.filter(x=>x.forearms).length,med:a.filter(x=>(+x.med||0)>=15).length,sleep:sl.length?sl.reduce((a,b)=>a+b,0)/sl.length:null}}function pct(n,d){return Math.round(Math.min(1,n/d)*100)}function score(s){return Math.round(([s.run/25,s.upper/4,s.lower/3,s.core/5,s.forearms/7,s.med/7].map(x=>Math.min(1,x)).reduce((a,b)=>a+b,0)/6)*100)}function streak(){let d=today(),n=0;for(let i=0;i<105;i++){if(!any(log(d)))break;n++;d=add(d,-1)}return n}
-function target(name,val,max,unit){return `<div class="target"><div class="targettop"><strong>${name}</strong><span>${val} / ${max} ${unit}</span></div><div class="bar"><i style="width:${pct(val,max)}%"></i></div></div>`}
-function dayClass(x){const n=[x.run>0,x.upper,x.lower,x.core,x.forearms,(+x.med||0)>=15,x.sleep!==null&&x.sleep!==undefined&&x.sleep!==''||!!x.note].filter(Boolean).length;return n>=7?'full':n?'has':''}
-function render(){if(!state.start){$('setup').style.display='block';$('main').style.display='none';return}$('setup').style.display='none';$('main').style.display='block';const day=currentDay(),w=weekNow(),s=ws(w),sc=score(s);$('heroTitle').textContent=`Week ${w} · Day ${day}`;$('heroSub').textContent=`${state.start} → ${add(state.start,104)} · Build the habit. Then build the athlete.`;$('dayBadge').textContent=`DAY ${day} / 105`;$('overallBar').style.width=`${day/105*100}%`;$('elapsed').textContent=`${Math.round(day/105*100)}% complete`;$('left').textContent=`${105-day} days left`;$('sRun').textContent=s.run.toFixed(1);$('sUpper').textContent=s.upper;$('sLower').textContent=s.lower;$('sCore').textContent=s.core;$('sStreak').textContent=streak();const t=log(today());$('todayTitle').textContent=any(t)?'Check-in complete ✓':'Ready when you are.';$('todaySummary').textContent=any(t)?`${t.run||0} km · ${[t.upper&&'Upper',t.lower&&'Lower',t.core&&'Core',t.forearms&&'Forearms'].filter(Boolean).join(', ')||'No workout'} · ${t.med||0} min meditation · ${t.sleep??'—'}h sleep`:'Log today in a few taps.';$('weekScore').textContent=`${sc}% complete`;$('weekLabel').textContent=`Week ${w}`;$('targets').innerHTML=[['🏃 Running',s.run,25,'km'],['💪 Upper',s.upper,4,'sessions'],['🦵 Lower',s.lower,3,'sessions'],['🔥 Core',s.core,5,'sessions'],['🤝 Forearms',s.forearms,7,'days'],['🧘 Meditation',s.med,7,'days']].map(a=>target(...a)).join('');$('glanceMed').textContent=`${s.med} / 7`;$('glanceForearms').textContent=`${s.forearms} / 7`;$('glanceSleep').textContent=s.sleep===null?'—':s.sleep.toFixed(1)+' h';$('glanceTracked').textContent=`${s.a.length} / 7`;renderWeekCalendar(w);renderScore(sc);renderAchievements();renderAnalytics(w,s);renderWeeks();renderHistory()}
-function renderWeekCalendar(w){const st=add(state.start,(w-1)*7);let h=['M','T','W','T','F','S','S'].map(x=>`<div class="calhead">${x}</div>`).join('');for(let i=0;i<7;i++){const d=add(st,i),x=log(d);h+=`<div class="calday ${dayClass(x)} ${d===today()?'today':''}" title="${d}">${D(d).getDate()}${any(x)?'<span class="dot"></span>':''}</div>`}$('weekCalendar').innerHTML=h}
-function renderScore(sc){$('scoreRing').style.setProperty('--p',sc+'%');$('scoreRingText').textContent=sc+'%';$('scoreHeadline').textContent=sc>=90?'Excellent consistency.':sc>=70?'Solid week in progress.':sc>=40?'Build momentum.':'Start with the next action.';$('scoreText').textContent=`Week ${weekNow()} is ${sc}% complete across your six tracked goals.`}
-function renderAchievements(){const all=Object.values(state.logs),run=all.reduce((a,x)=>a+(+x.run||0),0),check=all.filter(any).length,med=all.filter(x=>(+x.med||0)>=15).length;const arr=[['🔥','7-DAY STREAK',streak()>=7,streak()+' consecutive check-ins'],['🏃','25 KM WEEK',Array.from({length:15},(_,i)=>ws(i+1).run>=25).some(Boolean), 'Complete 25 km in any week'],['🧘','7 MEDITATION DAYS',med>=7,'Meditate 15+ minutes for 7 days'],['💪','50 TRAINING DAYS',check>=50,check+' logged days'],['🏆','105-DAY FINISHER',check>=105,'Complete the full challenge']];$('achievements').innerHTML=arr.map(a=>`<div class="achievement ${a[2]?'':'lock'}"><div class="badge">${a[0]}</div><div><b>${a[1]}</b><div class="muted">${a[3]}</div></div><span class="pill ${a[2]?'green':''}" style="margin-left:auto">${a[2]?'UNLOCKED':'LOCKED'}</span></div>`).join('')}
-function renderAnalytics(w,s){const sc=score(s);$('analyticsScore').textContent=sc+'%';$('analyticsSleep').textContent=s.sleep===null?'—':s.sleep.toFixed(1)+'h';$('aTracked').textContent=`${s.a.length} / 7`;$('aMed').textContent=`${s.med} / 7`;const arr=[['Running',s.run,25,'km'],['Upper',s.upper,4,''],['Lower',s.lower,3,''],['Core',s.core,5,''],['Forearms',s.forearms,7,''],['Meditation',s.med,7,'days']];$('analyticsBars').innerHTML=arr.map(a=>target(''+a[0],a[1],a[2],a[3])).join('');$('trend').innerHTML=Array.from({length:15},(_,i)=>{const q=ws(i+1),p=score(q);return `<div class="minirow"><span style="min-width:55px">Week ${i+1}</span><div style="flex:1;margin:0 12px"><div class="bar"><i style="width:${p}%"></i></div></div><b>${p}%</b></div>`}).join('')}
-function renderWeeks(){let total=0;$('weekCards').innerHTML=Array.from({length:15},(_,i)=>{const s=ws(i+1),p=score(s);total+=p;return `<div class="weekcard"><div class="weektop"><span>Week ${i+1}</span><span>${p}%</span></div><div class="weekmeta">${add(state.start,i*7)} — ${add(state.start,i*7+6)}</div><div class="bar" style="margin-top:10px"><i style="width:${p}%"></i></div><div class="mini"><div><small>Run</small><b>${s.run.toFixed(1)}/25</b></div><div><small>Upper</small><b>${s.upper}/4</b></div><div><small>Lower</small><b>${s.lower}/3</b></div><div><small>Core</small><b>${s.core}/5</b></div><div><small>Forearms</small><b>${s.forearms}/7</b></div><div><small>Med</small><b>${s.med}/7</b></div></div></div>`}).join('');$('challengeAvg').textContent=`${Math.round(total/15)}% avg`}
-function renderHistory(){const days=Array.from({length:105},(_,i)=>add(state.start,i));$('historyGrid').innerHTML=days.map(d=>`<button class="hday ${dayClass(log(d))} ${d===today()?'selected':''}" data-history="${d}">${D(d).getDate()}</button>`).join('');document.querySelectorAll('[data-history]').forEach(b=>b.onclick=()=>showHistory(b.dataset.history));showHistory(today())}
-function showHistory(d){const x=log(d);document.querySelectorAll('.hday').forEach(b=>b.classList.toggle('selected',b.dataset.history===d));$('historyDetail').innerHTML=`<div class="card" style="background:var(--panel2)"><div class="label">${d}</div><div style="margin-top:8px;line-height:1.9;font-size:13px">🏃 ${x.run||0} km<br>💪 Upper ${x.upper?'✓':'—'} · 🦵 Lower ${x.lower?'✓':'—'}<br>🔥 Core ${x.core?'✓':'—'} · 🤝 Forearms ${x.forearms?'✓':'—'}<br>🧘 ${x.med||0} min · 😴 ${x.sleep??'—'} h${x.note?'<br>📝 '+escapeHtml(x.note):''}</div><button class="btn secondary" style="margin-top:10px" onclick="editDay('${d}')">EDIT THIS DAY</button></div>`}
-function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}window.editDay=d=>{go('checkin');loadForm(d)};
-function loadForm(d){const x=log(d);$('logDate').value=d;$('run').value=x.run||'';$('med').value=x.med||'';$('sleep').value=x.sleep??'';$('note').value=x.note||'';selected={upper:!!x.upper,lower:!!x.lower,core:!!x.core,forearms:!!x.forearms};document.querySelectorAll('.q').forEach(b=>b.classList.toggle('on',!!selected[b.dataset.key]))}
-function go(v){document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===v));window.scrollTo({top:0,behavior:'smooth'})}
-document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>go(b.dataset.view));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));document.querySelectorAll('.q').forEach(b=>b.onclick=()=>{selected[b.dataset.key]=!selected[b.dataset.key];b.classList.toggle('on',selected[b.dataset.key])});$('logDate').onchange=e=>loadForm(e.target.value);$('saveLog').onclick=()=>{const d=$('logDate').value;if(!d)return;$('toast').textContent='';state.logs[d]={date:d,run:Math.max(0,+$('run').value||0),med:Math.max(0,+$('med').value||0),sleep:$('sleep').value===''?null:Math.max(0,+$('sleep').value),note:$('note').value.trim(),...selected};save();$('toast').textContent='✓ Saved. Dashboard updated.';render();loadForm(d)};
-$('startBtn').onclick=()=>{state.start=$('startDate').value||today();state.logs={};save();render();loadForm(today())};$('startDate').value=state.start||today();$('settingsBtn').onclick=()=>{$('settingsModal').classList.add('open');$('settingStart').textContent=state.start||'Not started'};$('closeSettings').onclick=()=>$('settingsModal').classList.remove('open');$('settingsModal').onclick=e=>{if(e.target.id==='settingsModal')$('settingsModal').classList.remove('open')};
-$('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='15-week-challenge-backup.json';a.click();URL.revokeObjectURL(a.href)};$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!x.start||!x.logs)throw Error();state=x;save();$('settingsModal').classList.remove('open');render();loadForm(today());alert('Backup imported successfully.')}catch(err){alert('That backup file could not be imported.')}};r.readAsText(f)};$('resetBtn').onclick=()=>{if(confirm('Delete all challenge data from this browser?')){localStorage.removeItem(KEY);location.reload()}};
-render();if(state.start)loadForm(today());
-</script></body></html>
+const KEY='15weekChallengeV3';
+const oldKeys=['15weekChallengeV2','15weekChallengeV1','15-week-challenge'];
+const $=id=>document.getElementById(id);
+
+function pad(n){return String(n).padStart(2,'0')}
+function today(){
+  const d=new Date();
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+}
+function D(s){const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)}
+function fmt(s){return D(s).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})}
+function add(s,n){const d=D(s);d.setDate(d.getDate()+n);return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
+function diff(a,b){return Math.round((D(b)-D(a))/86400000)}
+function clamp(n,a,b){return Math.max(a,Math.min(b,n))}
+function safeJSON(v){try{return JSON.parse(v)}catch{return null}}
+
+let state=(()=> {
+  let raw=localStorage.getItem(KEY), x=safeJSON(raw);
+  if(x && x.start && x.logs) return x;
+  for(const k of oldKeys){
+    const y=safeJSON(localStorage.getItem(k));
+    if(y && y.start && y.logs) return {start:y.start,logs:y.logs};
+  }
+  return {start:today(),logs:{}};
+})();
+let selected={upper:false,lower:false,core:false,forearms:false};
+
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+function log(d){return state.logs[d]||{date:d,run:0,med:0,sleep:null,note:'',upper:false,lower:false,core:false,forearms:false}}
+function any(x){return !!x && (x.run>0||x.med>0||x.sleep!==null&&x.sleep!==undefined&&x.sleep!==''||x.note||x.upper||x.lower||x.core||x.forearms)}
+function currentDay(){return clamp(diff(state.start,today())+1,1,105)}
+function currentWeek(){return clamp(Math.floor((currentDay()-1)/7)+1,1,15)}
+function weekStart(w){return add(state.start,(w-1)*7)}
+function weekStats(w){
+  const st=weekStart(w),en=add(st,6),arr=Object.values(state.logs).filter(x=>x.date>=st&&x.date<=en);
+  const sl=arr.filter(x=>x.sleep!==null&&x.sleep!==undefined&&x.sleep!=='').map(x=>+x.sleep);
+  return {
+    arr,run:arr.reduce((n,x)=>n+(+x.run||0),0),upper:arr.filter(x=>x.upper).length,
+    lower:arr.filter(x=>x.lower).length,core:arr.filter(x=>x.core).length,
+    forearms:arr.filter(x=>x.forearms).length,med:arr.filter(x=>(+x.med||0)>=15).length,
+    sleep:sl.length?sl.reduce((a,b)=>a+b,0)/sl.length:null
+  }
+}
+function score(s){
+  const vals=[s.run/25,s.upper/4,s.lower/3,s.core/5,s.forearms/7,s.med/7];
+  return Math.round(vals.map(v=>clamp(v,0,1)).reduce((a,b)=>a+b,0)/6*100)
+}
+function dayCompletion(x){
+  return [
+    x.run>0,x.upper,x.lower,x.core,x.forearms,(+x.med||0)>=15,
+    x.sleep!==null&&x.sleep!==undefined&&x.sleep!==''
+  ].filter(Boolean).length;
+}
+function dayLevel(x){const n=dayCompletion(x);return n>=6?'l3':n>=4?'l2':n>=1?'l1':''}
+function streak(){
+  let d=today(),n=0;
+  // Only count logged days up to today and within the challenge.
+  for(let i=0;i<105;i++){
+    if(d<state.start || !any(log(d))) break;
+    n++;d=add(d,-1);
+  }
+  return n;
+}
+function target(name,val,max,unit){
+  return `<div class="target"><div class="targettop"><strong>${name}</strong><span>${val} / ${max} ${unit}</span></div><div class="bar"><i style="width:${clamp(val/max,0,1)*100}%"></i></div></div>`;
+}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+
+function render(){
+  if(!state.start){$('setup').style.display='block';$('main').style.display='none';return}
+  $('setup').style.display='none';$('main').style.display='block';
+  const day=currentDay(),w=currentWeek(),s=weekStats(w),sc=score(s), td=today(),t=log(td);
+  $('heroTitle').textContent=`Week ${w} · Day ${day}`;
+  $('heroSub').textContent=`${fmt(state.start)} → ${fmt(add(state.start,104))} · Build the habit. Then build the athlete.`;
+  $('dayBadge').textContent=`DAY ${day} / 105`;
+  $('overallBar').style.width=`${day/105*100}%`;
+  $('elapsed').textContent=`${Math.round(day/105*100)}% complete`;
+  $('left').textContent=`${105-day} days left`;
+  $('sRun').textContent=s.run.toFixed(1);$('sUpper').textContent=s.upper;$('sLower').textContent=s.lower;$('sCore').textContent=s.core;$('sStreak').textContent=streak();
+  $('todayTitle').textContent=any(t)?'Check-in complete ✓':'Ready when you are.';
+  $('todaySummary').textContent=any(t)?`${t.run||0} km · ${[t.upper&&'Upper',t.lower&&'Lower',t.core&&'Core',t.forearms&&'Forearms'].filter(Boolean).join(', ')||'No workout'} · ${t.med||0} min meditation · ${t.sleep??'—'}h sleep`:'Log today in a few taps.';
+  $('weekLabel').textContent=`Week ${w}`;
+  $('targets').innerHTML=[['🏃 Running',s.run,25,'km'],['💪 Upper',s.upper,4,'sessions'],['🦵 Lower',s.lower,3,'sessions'],['🔥 Core',s.core,5,'sessions'],['🤝 Forearms',s.forearms,7,'days'],['🧘 Meditation',s.med,7,'days']].map(a=>target(...a)).join('');
+  $('glanceRun').textContent=`${s.run.toFixed(1)} / 25 km`;$('glanceMed').textContent=`${s.med} / 7`;$('glanceForearms').textContent=`${s.forearms} / 7`;$('glanceSleep').textContent=s.sleep===null?'—':s.sleep.toFixed(1)+' h';$('glanceTracked').textContent=`${s.arr.length} / 7`;
+  $('scoreRing').style.setProperty('--p',sc+'%');$('scoreRingText').textContent=sc+'%';
+  $('scoreHeadline').textContent=sc>=90?'Excellent consistency.':sc>=70?'Solid week in progress.':sc>=40?'Build momentum.':'Start with the next action.';
+  $('scoreText').textContent=`Week ${w} is ${sc}% complete across your six training goals.`;
+  renderWeekCalendar(w);renderAchievements();renderAnalytics(w,s);renderWeeks();renderHistory();
+}
+function renderWeekCalendar(w){
+  const st=weekStart(w);let h='';
+  for(let i=0;i<7;i++){
+    const d=add(st,i),x=log(d),lvl=dayLevel(x);
+    h+=`<button class="calday ${lvl} ${d===today()?'today':''}" data-history="${d}" title="${fmt(d)}">${D(d).getDate()}${any(x)?'<span class="dot"></span>':''}</button>`;
+  }
+  $('weekCalendar').innerHTML=h;
+  document.querySelectorAll('#weekCalendar [data-history]').forEach(b=>b.onclick=()=>editDay(b.dataset.history));
+}
+function renderAchievements(){
+  const all=Object.values(state.logs),check=all.filter(any).length,med=all.filter(x=>(+x.med||0)>=15).length;
+  const arr=[
+    ['🔥','7-DAY STREAK',streak()>=7,'7 consecutive check-in days'],
+    ['🏃','25 KM WEEK',Array.from({length:15},(_,i)=>weekStats(i+1).run>=25).some(Boolean),'Complete 25 km in any week'],
+    ['🧘','7 MEDITATION DAYS',med>=7,'Meditate 15+ minutes for 7 days'],
+    ['💪','50 TRAINING DAYS',check>=50,`${check} logged days`],
+    ['🏆','105-DAY FINISHER',check>=105,'Complete the full challenge']
+  ];
+  $('achievements').innerHTML=arr.map(a=>`<div class="achievement ${a[2]?'':'lock'}"><div class="badge">${a[0]}</div><div><b>${a[1]}</b><div class="muted">${a[3]}</div></div><span class="pill ${a[2]?'green':''}" style="margin-left:auto">${a[2]?'UNLOCKED':'LOCKED'}</span></div>`).join('');
+}
+function renderAnalytics(w,s){
+  const sc=score(s);
+  $('analyticsScore').textContent=sc+'%';$('analyticsSleep').textContent=s.sleep===null?'—':s.sleep.toFixed(1)+'h';
+  $('aTracked').textContent=`${s.arr.length} / 7`;$('aMed').textContent=`${s.med} / 7`;
+  $('analyticsBars').innerHTML=[['Running',s.run,25,'km'],['Upper',s.upper,4,''],['Lower',s.lower,3,''],['Core',s.core,5,''],['Forearms',s.forearms,7,'days'],['Meditation',s.med,7,'days']].map(a=>target(...a)).join('');
+  $('trend').innerHTML=Array.from({length:15},(_,i)=>{const q=weekStats(i+1),p=score(q);return `<div class="minirow"><span style="min-width:55px">Week ${i+1}</span><div style="flex:1;margin:0 12px"><div class="bar"><i style="width:${p}%"></i></div></div><b>${p}%</b></div>`}).join('');
+  let title='Your next action:',text='complete today’s check-in.';
+  if(!any(log(today()))) {title='Start today:';text='log your training, run, meditation and sleep in one quick check-in.'}
+  else if(s.run<25){title='Running target:';text=`${Math.max(0,25-s.run).toFixed(1)} km remaining this week.`}
+  else if(s.core<5){title='Core target:';text=`${5-s.core} core session${5-s.core===1?'':'s'} remaining this week.`}
+  else if(s.forearms<7){title='Forearms:';text=`${7-s.forearms} day${7-s.forearms===1?'':'s'} remaining this week.`}
+  else {title='Strong week:';text='your main weekly targets are in good shape.'}
+  $('insightTitle').textContent=title;$('insightText').textContent=text;
+}
+function renderWeeks(){
+  let total=0;
+  $('weekCards').innerHTML=Array.from({length:15},(_,i)=>{
+    const s=weekStats(i+1),p=score(s);total+=p;
+    return `<div class="weekcard"><div class="weektop"><span>Week ${i+1}</span><span>${p}%</span></div><div class="weekmeta">${fmt(weekStart(i+1))} — ${fmt(add(weekStart(i+1),6))}</div><div class="bar" style="margin-top:10px"><i style="width:${p}%"></i></div><div class="mini">
+      <div><small>Run</small><b>${s.run.toFixed(1)}/25</b></div><div><small>Upper</small><b>${s.upper}/4</b></div>
+      <div><small>Lower</small><b>${s.lower}/3</b></div><div><small>Core</small><b>${s.core}/5</b></div>
+      <div><small>Forearms</small><b>${s.forearms}/7</b></div><div><small>Med</small><b>${s.med}/7</b></div>
+    </div></div>`;
+  }).join('');
+  $('challengeAvg').textContent=`${Math.round(total/15)}% avg`;
+}
+function renderHistory(){
+  const days=Array.from({length:105},(_,i)=>add(state.start,i));
+  $('heatGrid').innerHTML=days.map(d=>`<button class="heatcell ${dayLevel(log(d))} ${d===today()?'today':''}" data-history="${d}" title="${fmt(d)}">${D(d).getDate()}</button>`).join('');
+  $('heatLabels').innerHTML=Array.from({length:15},(_,i)=>`<span>W${i+1}</span>`).join('');
+  document.querySelectorAll('#heatGrid [data-history]').forEach(b=>b.onclick=()=>showHistory(b.dataset.history));
+  showHistory(today());
+}
+function showHistory(d){
+  const x=log(d),n=dayCompletion(x);
+  document.querySelectorAll('[data-history]').forEach(b=>b.classList.toggle('selected',b.dataset.history===d));
+  $('historyDetail').innerHTML=`<div class="card" style="background:var(--panel2)">
+    <div class="label">${fmt(d)} · ${n}/7 daily markers</div>
+    <div style="margin-top:8px;line-height:1.9;font-size:12px">
+      🏃 ${x.run||0} km · 💪 Upper ${x.upper?'✓':'—'} · 🦵 Lower ${x.lower?'✓':'—'}<br>
+      🔥 Core ${x.core?'✓':'—'} · 🤝 Forearms ${x.forearms?'✓':'—'}<br>
+      🧘 ${x.med||0} min · 😴 ${x.sleep??'—'} h${x.note?'<br>📝 '+escapeHtml(x.note):''}
+    </div>
+    <button class="btn secondary" style="margin-top:10px" onclick="editDay('${d}')">EDIT THIS DAY</button>
+  </div>`;
+}
+window.editDay=function(d){go('checkin');loadForm(d)}
+function loadForm(d){
+  const x=log(d);$('logDate').value=d;$('run').value=x.run||'';$('med').value=x.med||'';$('sleep').value=x.sleep??'';$('note').value=x.note||'';
+  selected={upper:!!x.upper,lower:!!x.lower,core:!!x.core,forearms:!!x.forearms};
+  document.querySelectorAll('.q').forEach(b=>b.classList.toggle('on',!!selected[b.dataset.key]));
+}
+function go(v){
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===v));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>go(b.dataset.view));
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+document.querySelectorAll('.q').forEach(b=>b.onclick=()=>{selected[b.dataset.key]=!selected[b.dataset.key];b.classList.toggle('on',selected[b.dataset.key])});
+$('logDate').onchange=e=>loadForm(e.target.value);
+$('saveLog').onclick=()=>{
+  const d=$('logDate').value;if(!d)return;
+  state.logs[d]={date:d,run:Math.max(0,+$('run').value||0),med:Math.max(0,+$('med').value||0),
+    sleep:$('sleep').value===''?null:Math.max(0,+$('sleep').value),note:$('note').value.trim(),...selected};
+  save();$('toast').textContent='✓ Saved. Dashboard updated.';render();loadForm(d);
+};
+$('startBtn').onclick=()=>{state.start=$('startDate').value||today();state.logs={};save();render();loadForm(today())};
+$('startDate').value=state.start||today();
+$('settingsBtn').onclick=()=>{$('settingsModal').classList.add('open');$('settingStart').textContent=state.start?fmt(state.start):'Not started'};
+$('closeSettings').onclick=()=>$('settingsModal').classList.remove('open');
+$('settingsModal').onclick=e=>{if(e.target.id==='settingsModal')$('settingsModal').classList.remove('open')};
+$('exportBtn').onclick=()=>{
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='15-week-challenge-v3-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500);
+};
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=e=>{
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();r.onload=()=>{
+    try{const x=JSON.parse(r.result);if(!x.start||!x.logs)throw Error();
+      state={start:x.start,logs:x.logs};save();$('settingsModal').classList.remove('open');render();loadForm(today());alert('Backup imported successfully.');
+    }catch(err){alert('That backup file could not be imported.')}
+  };r.readAsText(f);
+};
+$('resetBtn').onclick=()=>{if(confirm('Delete all challenge data from this browser?')){localStorage.removeItem(KEY);location.reload()}};
+
+render();loadForm(today());
+</script>
+</body>
+</html>
