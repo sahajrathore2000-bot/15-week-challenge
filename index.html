@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10">
+<title>15 Week Challenge</title>
+<style>
+:root{--bg:#0b0d10;--panel:#12161b;--panel2:#181d23;--text:#f5f7fa;--muted:#98a1ad;--line:#252b33;--accent:#d7ff4f;--accent2:#b9e82e;--danger:#ff6b6b;--ok:#9ee04b;--radius:20px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}button{cursor:pointer}.app{max-width:1180px;margin:auto;padding:20px 18px 100px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.brand{font-weight:900;letter-spacing:-.04em;font-size:20px}.brand span{color:var(--accent)}
+.iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);width:42px;height:42px;border-radius:13px}
+.hero{background:linear-gradient(145deg,#171c21,#101318);border:1px solid var(--line);border-radius:28px;padding:24px;margin-bottom:16px;overflow:hidden}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);font-weight:800}.hero h1{font-size:34px;line-height:1;margin:7px 0}.hero p{color:var(--muted);margin:8px 0 18px}
+.progress{height:10px;background:#242a31;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:.3s}
+.herofoot{display:flex;justify-content:space-between;margin-top:9px;color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:17px}.metric{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.08em;text-transform:uppercase}.big{font-size:25px;font-weight:850;letter-spacing:-.04em;margin-top:5px}.small{font-size:12px;color:var(--muted);margin-top:3px}
+.section{margin-top:16px}.sectionhead{display:flex;align-items:end;justify-content:space-between;margin:0 0 10px}.section h2{font-size:18px;margin:0;letter-spacing:-.02em}.sectionhead span{font-size:12px;color:var(--muted)}
+.btn{border:0;border-radius:14px;padding:13px 16px;font-weight:800}.primary{background:var(--accent);color:#111}.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+.checkin{display:flex;align-items:center;justify-content:space-between;gap:12px}.checkin .btn{width:100%;max-width:300px}
+.target{margin:15px 0}.targettop{display:flex;justify-content:space-between;gap:12px;font-size:13px}.targettop strong{font-size:14px}.targettop span{color:var(--muted)}.bar{height:7px;background:#242a31;border-radius:99px;margin-top:7px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.weekgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.day{min-height:54px;border:1px solid var(--line);border-radius:12px;padding:7px;text-align:center;background:#11151a}.day .dow{font-size:9px;color:var(--muted)}.day .num{font-size:13px;font-weight:800;margin-top:3px}.day.full{background:#243019;border-color:#4c6120}.day.partial{background:#1e2329}
+.tabs{display:flex;gap:7px;overflow:auto;margin:18px 0 15px;padding-bottom:2px}.tab{white-space:nowrap;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;padding:9px 14px;font-weight:750;font-size:12px}.tab.active{background:var(--accent);color:#111;border-color:var(--accent)}
+.view{display:none}.view.active{display:block}
+.formcard{max-width:720px}.dateinput{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:13px;border-radius:12px;margin:7px 0 18px}
+.toggles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.toggle{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:14px;padding:14px 8px;text-align:center}.toggle b{display:block;font-size:20px}.toggle span{font-size:11px;color:var(--muted);display:block;margin-top:5px}.toggle.on{background:#263018;border-color:#607c26}.toggle.on span{color:var(--accent)}
+.field{margin:15px 0}.field label{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:7px}.field input{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:13px;border-radius:12px;outline:none}.field input:focus{border-color:var(--accent)}
+.savebar{position:sticky;bottom:12px;background:rgba(11,13,16,.9);backdrop-filter:blur(12px);padding-top:10px}
+.toast{font-size:12px;color:var(--accent);min-height:20px;margin-top:8px}
+.weekcards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.weekcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px}.weektitle{display:flex;justify-content:space-between;font-weight:850}.mini{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}.mini div{background:var(--panel2);border-radius:10px;padding:9px}.mini small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase}.mini b{font-size:13px}
+.history{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.hday{aspect-ratio:1;border-radius:9px;border:1px solid var(--line);background:var(--panel);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);position:relative}.hday.full{background:#29351b;color:var(--accent);border-color:#536b25}.hday.partial{background:#20252b}.hday.selected{outline:2px solid var(--accent)}
+.detail{margin-top:12px}.empty{color:var(--muted);font-size:13px;padding:18px 0}
+.settingsgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.danger{color:#ff9090;border-color:#4a2727}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.weekcards{grid-template-columns:1fr}.settingsgrid{grid-template-columns:1fr}}
+@media(max-width:520px){.app{padding:15px 13px 90px}.hero{padding:20px}.hero h1{font-size:29px}.grid{gap:8px}.card{padding:14px}.toggles{grid-template-columns:repeat(2,1fr)}.checkin{align-items:stretch;flex-direction:column}.checkin .btn{max-width:none}.history{gap:4px}.hday{border-radius:7px;font-size:9px}.weekgrid{gap:4px}.day{min-height:50px;padding:5px 2px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand">15 WEEK <span>CHALLENGE</span></div><button class="iconbtn" id="settingsBtn" aria-label="Settings">⚙</button></header>
+
+<div id="setup" class="card" style="display:none;margin-bottom:16px">
+<div class="metric">START YOUR CHALLENGE</div><h2 style="margin:6px 0">Choose your Day 1</h2><p style="color:var(--muted);font-size:13px">Your challenge runs for 105 days. Weeks are counted from your chosen start date.</p>
+<input class="dateinput" id="startDate">
+<button class="btn primary" id="startBtn">START 15-WEEK CHALLENGE</button>
+</div>
+
+<main id="main">
+<section class="hero">
+<div class="eyebrow">YOUR JOURNEY</div><h1 id="heroWeek">Week 1 · Day 1</h1><p id="heroSub">105 days. One check-in at a time.</p>
+<div class="progress"><i id="overallProgress"></i></div><div class="herofoot"><span id="overallPct">0% elapsed</span><span id="daysLeft">105 days remaining</span></div>
+</section>
+
+<div class="grid">
+<div class="card"><div class="metric">RUNNING</div><div class="big" id="runStat">0 / 25 km</div><div class="small">this week</div></div>
+<div class="card"><div class="metric">UPPER</div><div class="big" id="upperStat">0 / 4</div><div class="small">sessions</div></div>
+<div class="card"><div class="metric">LOWER</div><div class="big" id="lowerStat">0 / 3</div><div class="small">sessions</div></div>
+<div class="card"><div class="metric">STREAK</div><div class="big" id="streakStat">0 days</div><div class="small">daily check-in</div></div>
+</div>
+
+<div class="tabs">
+<button class="tab active" data-view="dashboard">Dashboard</button>
+<button class="tab" data-view="checkin">Daily Check-In</button>
+<button class="tab" data-view="weekly">Week</button>
+<button class="tab" data-view="challenge">15 Weeks</button>
+<button class="tab" data-view="history">History</button>
+</div>
+
+<section id="dashboard" class="view active">
+<div class="card checkin"><div><div class="metric">TODAY</div><div style="font-size:18px;font-weight:850;margin-top:5px" id="todayStatus">No check-in yet</div><div class="small" id="todaySummary">Log today's activity.</div></div><button class="btn primary" data-go="checkin">CHECK IN TODAY →</button></div>
+<div class="section"><div class="sectionhead"><h2>Weekly targets</h2><span id="weekPct">0% complete</span></div><div class="card" id="targets"></div></div>
+<div class="section"><div class="sectionhead"><h2>7-day activity</h2><span>Current week</span></div><div class="card"><div class="weekgrid" id="weekDays"></div></div></div>
+</section>
+
+<section id="checkin" class="view">
+<div class="card formcard">
+<div class="metric">DAILY CHECK-IN</div><h2 style="margin:5px 0 2px">What did you do?</h2><div class="small">This should take less than 20 seconds.</div>
+<label class="metric" style="display:block;margin-top:18px">DATE</label><input class="dateinput" type="date" id="logDate">
+<div class="section"><div class="metric">WORKOUT SESSIONS</div><div class="toggles" style="margin-top:8px">
+<button class="toggle" data-key="upper"><b>💪</b><span>Upper</span></button>
+<button class="toggle" data-key="lower"><b>🦵</b><span>Lower</span></button>
+<button class="toggle" data-key="core"><b>🔥</b><span>Core</span></button>
+<button class="toggle" data-key="forearms"><b>🤝</b><span>Forearms</span></button>
+</div></div>
+<div class="field"><label>🏃 RUNNING — KM TODAY</label><input id="run" type="number" min="0" max="100" step=".1" placeholder="0"></div>
+<div class="field"><label>🧘 MEDITATION — MINUTES</label><input id="med" type="number" min="0" max="300" step="1" placeholder="0"></div>
+<div class="field"><label>😴 SLEEP — HOURS</label><input id="sleep" type="number" min="0" max="24" step=".1" placeholder="e.g. 7.5"></div>
+<div class="savebar"><button class="btn primary" style="width:100%" id="saveLog">SAVE CHECK-IN</button><div class="toast" id="toast"></div></div>
+</div>
+</section>
+
+<section id="weekly" class="view"><div class="card"><div class="metric" id="weeklyLabel">WEEK 1</div><h2 style="margin:5px 0">This Week</h2><div id="weeklyTargets"></div><div class="grid" style="margin-top:15px"><div><div class="metric">AVG SLEEP</div><div class="big" id="avgSleep">—</div></div><div><div class="metric">TRACKED</div><div class="big" id="trackedDays">0 / 7</div></div><div><div class="metric">MEDITATION</div><div class="big" id="medWeek">0 / 7</div></div><div><div class="metric">CORE</div><div class="big" id="coreWeek">0 / 5</div></div></div></div></section>
+
+<section id="challenge" class="view"><div class="sectionhead"><h2>15-Week Overview</h2><span id="challengeStats"></span></div><div class="weekcards" id="weekCards"></div></section>
+
+<section id="history" class="view"><div class="card"><div class="sectionhead"><h2>105-Day History</h2><span>Tap a day</span></div><div class="history" id="historyGrid"></div><div class="detail" id="historyDetail"><div class="empty">Select a day to see its check-in.</div></div></div></section>
+</main>
+</div>
+
+<script>
+const KEY="15weekchallenge_v1";
+const TARGET={run:25,upper:4,lower:3,core:5,forearms:7,med:7};
+let state={start:null,logs:{}};
+let selected={upper:false,lower:false,core:false,forearms:false};
+try{const saved=JSON.parse(localStorage.getItem(KEY));if(saved)state=saved}catch(e){}
+const $=id=>document.getElementById(id);
+const isoToday=()=>new Date().toISOString().slice(0,10);
+function parseDate(s){const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
+function iso(d){return new Date(d.getFullYear(),d.getMonth(),d.getDate()).toISOString().slice(0,10)}
+function addDays(s,n){const d=parseDate(s);d.setDate(d.getDate()+n);return iso(d)}
+function dayIndex(s){return Math.floor((parseDate(s)-parseDate(state.start))/86400000)}
+function weekOf(s){return Math.floor(dayIndex(s)/7)+1}
+function log(s){return state.logs[s]||{date:s,run:0,upper:false,lower:false,core:false,forearms:false,med:0,sleep:null}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+function weekStats(w){
+ const start=addDays(state.start,(w-1)*7),end=addDays(start,6);
+ const a=Object.values(state.logs).filter(x=>x.date>=start&&x.date<=end);
+ const sleeps=a.filter(x=>x.sleep!==null&&x.sleep!==undefined&&x.sleep!=="").map(x=>+x.sleep);
+ return {a,run:a.reduce((n,x)=>n+(+x.run||0),0),upper:a.filter(x=>x.upper).length,lower:a.filter(x=>x.lower).length,core:a.filter(x=>x.core).length,forearms:a.filter(x=>x.forearms).length,med:a.filter(x=>(+x.med||0)>=15).length,sleeps};
+}
+function pct(n,d){return Math.round(Math.min(1,n/d)*100)}
+function overallDay(){if(!state.start)return 0;return Math.max(0,Math.min(105,dayIndex(isoToday())+1))}
+function render(){
+ if(!state.start){$("setup").style.display="block";$("main").style.display="none";return}
+ $("setup").style.display="none";$("main").style.display="block";
+ const di=overallDay(),w=Math.min(15,Math.max(1,Math.floor(Math.max(0,di-1)/7)+1)),s=weekStats(w);
+ $("heroWeek").textContent=`Week ${w} · Day ${di}`;
+ $("heroSub").textContent=`${state.start} → ${addDays(state.start,104)} · Keep showing up.`;
+ $("overallProgress").style.width=`${di/105*100}%`;
+ $("overallPct").textContent=`${Math.round(di/105*100)}% elapsed`;
+ $("daysLeft").textContent=`${105-di} days remaining`;
+ $("runStat").textContent=`${s.run.toFixed(1)} / 25 km`;
+ $("upperStat").textContent=`${s.upper} / 4`;
+ $("lowerStat").textContent=`${s.lower} / 3`;
+ $("streakStat").textContent=`${streak()} days`;
+ const t=log(isoToday()),done=hasAny(t);
+ $("todayStatus").textContent=done?"Check-in completed":"No check-in yet";
+ $("todaySummary").textContent=done?`${t.run||0} km · ${[t.upper&&"Upper",t.lower&&"Lower",t.core&&"Core",t.forearms&&"Forearms"].filter(Boolean).join(", ")||"No workout"} · ${t.med||0} min meditation · ${t.sleep??"—"}h sleep`:"Log today's activity.";
+ $("weekPct").textContent=`${weekCompletion(s)}% complete`;
+ const arr=[["🏃 Running",s.run,25,"km"],["💪 Upper",s.upper,4,"sessions"],["🦵 Lower",s.lower,3,"sessions"],["🔥 Core",s.core,5,"sessions"],["🤝 Forearms",s.forearms,7,"days"],["🧘 Meditation",s.med,7,"days"]];
+ $("targets").innerHTML=arr.map(x=>targetHTML(x)).join("");
+ const ws=addDays(state.start,(w-1)*7);
+ $("weekDays").innerHTML=Array.from({length:7},(_,i)=>dayCell(addDays(ws,i))).join("");
+ renderWeekly(w,s);renderWeeks();renderHistory();
+}
+function targetHTML(x){return `<div class="target"><div class="targettop"><strong>${x[0]}</strong><span>${x[1]} / ${x[2]} ${x[3]}</span></div><div class="bar"><i style="width:${pct(x[1],x[2])}%"></i></div></div>`}
+function dayCell(d){const x=log(d), n=[x.run>0,x.upper,x.lower,x.core,x.forearms,(+x.med||0)>=15,x.sleep!==null&&x.sleep!==undefined&&x.sleep!==""].filter(Boolean).length;return `<div class="day ${n===7?"full":n?"partial":""}"><div class="dow">${parseDate(d).toLocaleDateString(undefined,{weekday:"short"}).slice(0,3)}</div><div class="num">${parseDate(d).getDate()}</div></div>`}
+function weekCompletion(s){const vals=[s.run/25,s.upper/4,s.lower/3,s.core/5,s.forearms/7,s.med/7];return Math.round(vals.reduce((a,b)=>a+Math.min(1,b),0)/6*100)}
+function renderWeekly(w,s){
+ $("weeklyLabel").textContent=`WEEK ${w}`;
+ $("weeklyTargets").innerHTML=[["🏃 Running",s.run,25,"km"],["💪 Upper",s.upper,4,"sessions"],["🦵 Lower",s.lower,3,"sessions"],["🔥 Core",s.core,5,"sessions"],["🤝 Forearms",s.forearms,7,"days"],["🧘 Meditation",s.med,7,"days"]].map(targetHTML).join("");
+ $("avgSleep").textContent=s.sleeps.length?(s.sleeps.reduce((a,b)=>a+b,0)/s.sleeps.length).toFixed(1)+" h":"—";
+ $("trackedDays").textContent=`${s.a.length} / 7`;$("medWeek").textContent=`${s.med} / 7`;$("coreWeek").textContent=`${s.core} / 5`;
+}
+function renderWeeks(){
+ let total=0;
+ $("weekCards").innerHTML=Array.from({length:15},(_,i)=>{const s=weekStats(i+1),p=weekCompletion(s);total+=p;return `<div class="weekcard"><div class="weektitle"><span>Week ${i+1}</span><span>${p}%</span></div><div class="bar" style="margin-top:9px"><i style="width:${p}%"></i></div><div class="mini"><div><small>Run</small><b>${s.run.toFixed(1)}/25</b></div><div><small>Upper</small><b>${s.upper}/4</b></div><div><small>Lower</small><b>${s.lower}/3</b></div><div><small>Core</small><b>${s.core}/5</b></div><div><small>Forearms</small><b>${s.forearms}/7</b></div><div><small>Med</small><b>${s.med}/7</b></div></div></div>`}).join("");
+ $("challengeStats").textContent=`${Math.round(total/15)}% avg weekly completion`;
+}
+function renderHistory(){
+ const days=Array.from({length:105},(_,i)=>addDays(state.start,i));
+ $("historyGrid").innerHTML=days.map(d=>{const x=log(d),n=[x.run>0,x.upper,x.lower,x.core,x.forearms,(+x.med||0)>=15,x.sleep!==null&&x.sleep!==undefined&&x.sleep!==""].filter(Boolean).length;return `<button class="hday ${n===7?"full":n?"partial":""}" data-history="${d}" title="${d}">${parseDate(d).getDate()}</button>`}).join("");
+ document.querySelectorAll("[data-history]").forEach(b=>b.onclick=()=>showHistory(b.dataset.history));
+}
+function showHistory(d){const x=log(d);document.querySelectorAll(".hday").forEach(b=>b.classList.toggle("selected",b.dataset.history===d));$("historyDetail").innerHTML=`<div class="card" style="background:var(--panel2)"><div class="metric">${d}</div><div style="margin-top:8px;font-size:14px;line-height:1.9">🏃 ${x.run||0} km<br>💪 Upper ${x.upper?"✓":"—"} · 🦵 Lower ${x.lower?"✓":"—"}<br>🔥 Core ${x.core?"✓":"—"} · 🤝 Forearms ${x.forearms?"✓":"—"}<br>🧘 ${x.med||0} min · 😴 ${x.sleep??"—"} h</div><button class="btn secondary" style="margin-top:10px" onclick="openEdit('${d}')">EDIT THIS DAY</button></div>`}
+window.openEdit=d=>{$("[data-view='checkin']").click();loadForm(d)}
+function loadForm(d){const x=log(d);$("logDate").value=d;$("run").value=x.run||"";$("med").value=x.med||"";$("sleep").value=x.sleep??"";selected={upper:!!x.upper,lower:!!x.lower,core:!!x.core,forearms:!!x.forearms};document.querySelectorAll(".toggle").forEach(b=>b.classList.toggle("on",!!selected[b.dataset.key]))}
+function hasAny(x){return !!(x.run||x.upper||x.lower||x.core||x.forearms||x.med||x.sleep!==null&&x.sleep!==undefined&&x.sleep!=="")}
+function streak(){let d=isoToday(),n=0;for(let i=0;i<105;i++){const x=log(d);if(!hasAny(x))break;n++;d=addDays(d,-1)}return n}
+function startChallenge(){state.start=$("startDate").value||isoToday();state.logs={};save();render();loadForm(isoToday())}
+
+$("startBtn").onclick=startChallenge;
+$("startDate").value=state.start||isoToday();
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));$(b.dataset.view).classList.add("active")});
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>document.querySelector(`[data-view="${b.dataset.go}"]`).click());
+document.querySelectorAll(".toggle").forEach(b=>b.onclick=()=>{selected[b.dataset.key]=!selected[b.dataset.key];b.classList.toggle("on",selected[b.dataset.key])});
+$("logDate").onchange=e=>loadForm(e.target.value);
+$("saveLog").onclick=()=>{const d=$("logDate").value;if(!d){$("toast").textContent="Choose a date.";return}state.logs[d]={date:d,run:Math.max(0,+$("run").value||0),med:Math.max(0,+$("med").value||0),sleep:$("sleep").value===""?null:Math.max(0,+$("sleep").value),...selected};save();$("toast").textContent="✓ Saved — dashboard updated.";render();loadForm(d)};
+$("settingsBtn").onclick=()=>{alert("Data is stored in this browser. Use your browser's export/backup options or keep the app on the same device. Cloud sync can be added in V2.")};
+render();if(state.start)loadForm(isoToday());
+</script>
+</body>
+</html>
